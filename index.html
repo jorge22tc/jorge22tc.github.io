@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge Martes — Software Engineer · AI & Automation</title>
+<meta name="description" content="Jorge Martes — Software Engineer specializing in AI-driven automation, enterprise data systems and full-stack development. Panama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1c; --bg2:#0f1729; --card:#141d33; --border:#1e2a45;
+  --text:#e2e8f0; --muted:#94a3b8; --accent:#3b9eff; --accent2:#7c5cff;
+  --grad:linear-gradient(135deg,#3b9eff,#7c5cff);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
+.mono{font-family:'JetBrains Mono',monospace}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;width:100%;background:rgba(10,15,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100}
+nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);text-decoration:none;font-size:1.05rem}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}
+nav ul a:hover{color:var(--accent)}
+@media(max-width:640px){nav ul{gap:16px}nav ul li:nth-child(n+4){display:none}}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(59,158,255,.12),transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-250px;left:-150px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(124,92,255,.10),transparent 65%);pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero .kicker{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.95rem;margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.hero h2{font-size:clamp(1.3rem,4vw,2.1rem);font-weight:600;margin-top:8px;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;color:var(--muted);margin-top:22px;font-size:1.05rem}
+.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;
+  text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 24px rgba(59,158,255,.28)}
+.btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--card)}
+.btn-ghost:hover{border-color:var(--accent)}
+
+/* Sections */
+section{padding:88px 0}
+.sec-title{font-size:1.7rem;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.sec-title::before{content:'';width:34px;height:4px;border-radius:2px;background:var(--grad)}
+.sec-sub{color:var(--muted);margin-bottom:40px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+.about-grid p{color:var(--muted);margin-bottom:14px}
+.about-grid strong{color:var(--text)}
+.facts{display:flex;flex-direction:column;gap:14px}
+.fact{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.fact .num{font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fact .lbl{color:var(--muted);font-size:.86rem}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.titem{position:relative;padding-bottom:36px}
+.titem:last-child{padding-bottom:0}
+.titem::before{content:'';position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--accent)}
+.titem .role{font-weight:700;font-size:1.08rem}
+.titem .org{color:var(--accent);font-weight:600}
+.titem .when{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted);margin:4px 0 10px}
+.titem ul{list-style:none;color:var(--muted);font-size:.94rem}
+.titem li{padding-left:18px;position:relative;margin-bottom:6px}
+.titem li::before{content:'›';position:absolute;left:0;color:var(--accent)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:border-color .2s,transform .2s}
+.skill-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.skill-card h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill-card h3 .ico{font-size:1.2rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.76rem;padding:5px 11px;border-radius:999px;
+  background:rgba(59,158,255,.1);color:var(--accent);border:1px solid rgba(59,158,255,.25)}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.proj{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;
+  display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--accent2);transform:translateY(-3px)}
+.proj h3{font-size:1.05rem}
+.proj p{color:var(--muted);font-size:.92rem;flex:1}
+.proj .soon{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent2);
+  border:1px dashed rgba(124,92,255,.4);border-radius:8px;padding:3px 10px;width:fit-content}
+
+/* Contact */
+.contact-box{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:48px;text-align:center}
+.contact-box h2{font-size:1.6rem;font-weight:800}
+.contact-box p{color:var(--muted);max-width:480px;margin:14px auto 28px}
+
+footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo">jorge@martes:~$</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="kicker">Hi, my name is</div>
+    <h1>Jorge Martes.</h1>
+    <h2>I automate the enterprise with AI.</h2>
+    <p>Software Engineer specializing in <strong style="color:var(--text)">AI-driven automation</strong> and
+       enterprise data systems. I build intelligent workflows over Oracle &amp; SQL Server at telecom scale —
+       currently at Liberty Networks, Panama.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="Jorge_Martes_CV.pdf" download>⬇ Download CV</a>
+      <a class="btn btn-ghost" href="https://github.com/jorge22tc" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/jorgemartes" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="sec-title">About me</h2>
+    <p class="sec-sub">Engineer by training, automator by instinct.</p>
+    <div class="about-grid">
+      <div>
+        <p>I'm a software engineer from Panama 🇵🇦 with an international path: I studied
+           <strong>Software Engineering at Ontario Tech University (Canada)</strong>, worked alongside
+           robotic production systems at <strong>General Motors</strong>, and completed a Python, SQL &amp;
+           Cloud diploma at <strong>IMMUNE Technology Institute (Madrid)</strong>.</p>
+        <p>Today I work as an <strong>AI Software Developer at Liberty Networks</strong>, where I architect
+           billing and workflow automations across enterprise infrastructure and lead AI initiatives that
+           classify tickets and manage customer workflows automatically.</p>
+        <p>I'm also pursuing a <strong>Cybersecurity Engineering degree</strong> — because automation
+           without security is just a faster way to break things.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num">60%+</div><div class="lbl">manual work eliminated through AI automation</div></div>
+        <div class="fact"><div class="num">3</div><div class="lbl">countries shaped my training — Canada, Spain, Panama</div></div>
+        <div class="fact"><div class="num">2</div><div class="lbl">languages — English &amp; Spanish, full professional</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--bg2)">
+  <div class="container">
+    <h2 class="sec-title">Experience</h2>
+    <p class="sec-sub">Where I've built things that matter.</p>
+    <div class="timeline">
+      <div class="titem">
+        <div class="role">AI Software Developer <span class="org">@ Liberty Networks</span></div>
+        <div class="when">Feb 2025 — Present · Panama City, Panama</div>
+        <ul>
+          <li>Architect billing &amp; SOHO system automations across enterprise infrastructure.</li>
+          <li>Cross-server SQL against Oracle and SQL Server at enterprise scale.</li>
+          <li>Lead AI ticket-classification &amp; workflow automation — 60%+ less manual intervention.</li>
+        </ul>
+      </div>
+      <div class="titem">
+        <div class="role">Lead Developer <span class="org">@ TD Tech Solutions</span></div>
+        <div class="when">Jan 2024 — Feb 2025 · Panama</div>
+        <ul>
+          <li>End-to-end digitalization solutions: requirements → production.</li>
+          <li>Web platforms with backend APIs, relational DBs and AI-driven workflows.</li>
+          <li>BI dashboards &amp; marketing automation for hospitality and logistics clients.</li>
+        </ul>
+      </div>
+      <div class="titem">
+        <div class="role">Automotive Systems Technician <span class="org">@ General Motors</span></div>
+        <div class="when">Nov 2020 — Mar 2024 · Ontario, Canada</div>
+        <ul>
+          <li>Automated production lines, robotic systems and real-time quality control.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="sec-title">Skills</h2>
+    <p class="sec-sub">The tools I reach for.</p>
+    <div class="skills-grid">
+      <div class="skill-card"><h3><span class="ico">💻</span>Languages</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Java</span><span class="tag">SQL</span></div></div>
+      <div class="skill-card"><h3><span class="ico">🤖</span>AI &amp; Data</h3>
+        <div class="tags"><span class="tag">Machine Learning</span><span class="tag">LLM automation</span><span class="tag">Data Science</span><span class="tag">BI dashboards</span></div></div>
+      <div class="skill-card"><h3><span class="ico">🗄️</span>Databases</h3>
+        <div class="tags"><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">Cross-server queries</span><span class="tag">Performance tuning</span></div></div>
+      <div class="skill-card"><h3><span class="ico">☁️</span>Cloud &amp; Security</h3>
+        <div class="tags"><span class="tag">AWS</span><span class="tag">Git / GitHub</span><span class="tag">Cybersecurity</span><span class="tag">Secure data handling</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--bg2)">
+  <div class="container">
+    <h2 class="sec-title">Projects</h2>
+    <p class="sec-sub">Personal builds — currently being migrated and documented.</p>
+    <div class="projects-grid">
+      <div class="proj">
+        <h3>🌌 Aizyla</h3>
+        <p>A multi-service personal platform running on my own VPS infrastructure. Full write-up and public repos coming soon.</p>
+        <span class="soon">in migration →</span>
+      </div>
+      <div class="proj">
+        <h3>⚙️ Enterprise-style AI automation</h3>
+        <p>Public, sanitized showcase of the AI ticket-classification and workflow patterns I use in production.</p>
+        <span class="soon">coming soon</span>
+      </div>
+      <div class="proj">
+        <h3>📊 Data &amp; BI playground</h3>
+        <p>Dashboards and ETL patterns for real-world business intelligence, from raw SQL to visualization.</p>
+        <span class="soon">coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Let's build something.</h2>
+      <p>I'm open to remote and hybrid opportunities where AI, data and automation meet real business problems.</p>
+      <a class="btn btn-primary" href="mailto:jorge22tc@gmail.com">✉ jorge22tc@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Built by Jorge Martes · <a href="https://github.com/jorge22tc" target="_blank" rel="noopener">github.com/jorge22tc</a>
+  </div>
+</footer>
+
+</body>
+</html>
