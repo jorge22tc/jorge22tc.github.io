@@ -96,6 +96,15 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.02em;margin-b
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer span b{color:var(--tx);font-weight:600}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(640px 420px at 72% 28%,#000,transparent);mask-image:radial-gradient(640px 420px at 72% 28%,#000,transparent);pointer-events:none}
+.pill-ow{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;letter-spacing:.08em;color:var(--ok);background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);border-radius:99px;padding:4px 12px;margin-left:14px}
+.pill-ow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.shot{margin:-26px -26px 18px;height:158px;overflow:hidden;border-bottom:1px solid var(--line);border-radius:16px 16px 0 0}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .35s}
+.card:hover .shot img{transform:scale(1.045)}
+.shot-mv{margin:-26px -26px 18px;height:158px;border-bottom:1px solid var(--line);border-radius:16px 16px 0 0;background:#0B1120;font-family:var(--mono);font-size:11.5px;color:#7E8CA8;padding:16px 18px;line-height:1.8;overflow:hidden}
+.shot-mv b{color:var(--ac2);font-weight:500}.shot-mv i{font-style:normal;color:var(--ok)}
 </style>
 </head>
 <body>
@@ -107,11 +116,11 @@ footer span b{color:var(--tx);font-weight:600}
     <li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
   </ul>
-  <a class="cta" href="cv/Jorge_Martes_CV.pdf" download>Download CV</a>
+  <a class="cta" href="https://nadiweb.tech/pa/Jorge_Martes_CV.pdf" download>Download CV</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
-  <p class="kicker">Panama City, Panama · Open to remote</p>
+  <p class="kicker">Panama City, Panama · UTC-5 · Remote<span class="pill-ow">OPEN TO WORK</span></p>
   <h1>Jorge Martes</h1>
   <p class="type-line">I build <span id="typed"></span><span class="caret"></span></p>
   <p class="sub">Software Engineer specializing in <strong>AI-driven automation</strong> and <strong>enterprise data systems</strong>. I design intelligent workflows over Oracle and SQL Server at telecom scale — currently at <strong>Liberty Networks</strong> — and I operate <strong>six products in production</strong> on infrastructure I run myself.</p>
@@ -133,7 +142,7 @@ footer span b{color:var(--tx);font-weight:600}
     <p class="sec-k">01 · about</p>
     <h2>Engineer by trade, operator by conviction</h2>
     <p class="lead" style="margin-bottom:18px">Most engineers ship code. I ship code <em>and keep it alive</em>: my own VPS runs nginx multi-site, Docker (n8n + PostgreSQL), automated content pipelines, scheduled jobs, hardened SSH, fail2ban and off-site backups — serving real users every day.</p>
-    <p style="color:var(--mut);font-size:15px">That combination — <strong style="color:var(--tx)">AI engineering + enterprise SQL + production operations</strong> — is what I bring to a team: I don't hand off problems at the deploy line. B.Sc. in Information Technologies (UTP), studying Cybersecurity Engineering, English C1 (Ontario Tech / EF SET 74).</p>
+    <p style="color:var(--mut);font-size:15px">That combination — <strong style="color:var(--tx)">AI engineering + enterprise SQL + production operations</strong> — is what I bring to a team: I don't hand off problems at the deploy line. Engineer's Degree in Computer Software Engineering (Ontario Tech University, Canada), Cybersecurity Engineering in progress (Universidad del Istmo), full professional English.</p>
   </div>
   <div class="rev term" id="infra">
     <div class="term-bar"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><em>ssh production — live status</em></div>
@@ -146,8 +155,8 @@ footer span b{color:var(--tx);font-weight:600}
   <h2 class="rev">Where I've made an impact</h2>
   <div class="xp" style="margin-top:40px">
     <div class="xp-item rev">
-      <span class="when">2024 — PRESENT</span>
-      <h3>Software Engineer</h3>
+      <span class="when">FEB 2025 — PRESENT</span>
+      <h3>AI Software Developer</h3>
       <p class="org">Liberty Networks · Panama City (telecom, enterprise)</p>
       <ul>
         <li>Built <strong>AI-based ticket classification</strong> that cut manual processing time by <strong>60%</strong> across support operations.</li>
@@ -156,9 +165,9 @@ footer span b{color:var(--tx);font-weight:600}
       </ul>
     </div>
     <div class="xp-item rev">
-      <span class="when">2023 — PRESENT</span>
-      <h3>Founder & Solo Engineer</h3>
-      <p class="org">Self-managed production platform (VPS) — 6 live products</p>
+      <span class="when">JAN 2024 — PRESENT</span>
+      <h3>Founder & Lead Developer</h3>
+      <p class="org">TD Solutions — digital agency & self-managed platform, 6 live products</p>
       <ul>
         <li><strong>aizyla.com</strong> — AI news & tools site with automated publishing pipeline (RSS → CTR scoring → SEO/schema → verified deploy). Diagnosed and <strong>recovered a Google Helpful Content penalty</strong>: 8→68 impressions/day, PageSpeed 98.</li>
         <li><strong>nadiweb.tech</strong> — 20-tool online utility ecosystem (Astro + React islands, Gemini-powered CV assistant).</li>
@@ -167,12 +176,12 @@ footer span b{color:var(--tx);font-weight:600}
       </ul>
     </div>
     <div class="xp-item rev" style="padding-bottom:0">
-      <span class="when">2021 — 2024</span>
-      <h3>General Manager → Technology Lead</h3>
-      <p class="org">Retail operations, Panama</p>
+      <span class="when">NOV 2020 — MAR 2024</span>
+      <h3>Automotive Systems Technician</h3>
+      <p class="org">General Motors · Ontario, Canada</p>
       <ul>
-        <li>Led operations and drove digitalization: inventory systems, e-commerce, payment integrations.</li>
-        <li>Bridge profile: <strong>business ownership mindset</strong> applied to engineering decisions.</li>
+        <li>Worked on <strong>automated vehicle production lines</strong> with robotic systems and computerized quality controls, responding to real-time alerts to minimize defects and stoppages.</li>
+        <li>Systematic diagnostics and technical-documentation discipline, carried into software engineering.</li>
       </ul>
     </div>
   </div>
@@ -184,6 +193,7 @@ footer span b{color:var(--tx);font-weight:600}
   <p class="lead rev">Real systems with real users — not tutorial repos.</p>
   <div class="cards">
     <div class="card rev">
+      <div class="shot"><img src="https://nadiweb.tech/pa/triageai.png" alt="TriageAI repository card" loading="lazy"></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.3A7 7 0 0 1 12 2z"/><path d="M9 21h6"/></svg></span><span class="badge oss">OPEN SOURCE</span></div>
       <h3>TriageAI — intelligent ticket triage</h3>
       <p>FastAPI service that classifies support tickets (urgency, category, sentiment) with a two-tier engine: LLM (Anthropic/Gemini) with deterministic fallback — the service never fails because a provider is down. 15 tests, CI matrix, Docker.</p>
@@ -191,6 +201,7 @@ footer span b{color:var(--tx);font-weight:600}
       <div class="links"><a href="https://github.com/jorge22tc/triage-ai" target="_blank" rel="noopener">Code</a></div>
     </div>
     <div class="card rev">
+      <div class="shot"><img src="https://nadiweb.tech/pa/aizyla.jpg" alt="aizyla.com live homepage" loading="lazy"></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/><path d="M12 16v4"/></svg></span><span class="badge live">LIVE</span></div>
       <h3>AIZyla — automated AI publication</h3>
       <p>News & tools site run by an automated pipeline: RSS ingestion, CTR-scored selection, SEO/schema generation, verified deploys. Survived and recovered a Google core penalty with a documented E-E-A-T redesign (+750% impressions).</p>
@@ -198,6 +209,7 @@ footer span b{color:var(--tx);font-weight:600}
       <div class="links"><a href="https://aizyla.com" target="_blank" rel="noopener">aizyla.com</a></div>
     </div>
     <div class="card rev">
+      <div class="shot"><img src="https://nadiweb.tech/pa/nadiweb.jpg" alt="nadiweb.tech live homepage" loading="lazy"></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span class="badge live">LIVE</span></div>
       <h3>NadiWeb — 20-tool ecosystem</h3>
       <p>Online utilities platform (image, audio, video, documents, QR, CV builder with AI assistant). Astro static core with React islands, Web Audio API waveform editing, zero-dependency client-side processing.</p>
@@ -205,6 +217,7 @@ footer span b{color:var(--tx);font-weight:600}
       <div class="links"><a href="https://nadiweb.tech" target="_blank" rel="noopener">nadiweb.tech</a></div>
     </div>
     <div class="card rev">
+      <div class="shot"><img src="https://nadiweb.tech/pa/tds.jpg" alt="tdsolutionspa.com live homepage" loading="lazy"></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span><span class="badge live">LIVE</span></div>
       <h3>TD Solutions — agency & backend</h3>
       <p>Digital agency serving external clients: static frontend plus n8n workflow backend (Docker + PostgreSQL) powering coupons, invoicing and admin panels. PagueloFácil payment integration for the Panama market.</p>
@@ -212,6 +225,7 @@ footer span b{color:var(--tx);font-weight:600}
       <div class="links"><a href="https://tdsolutionspa.com" target="_blank" rel="noopener">tdsolutionspa.com</a></div>
     </div>
     <div class="card rev">
+      <div class="shot-mv">$ multiverso status<br><b>6 projects</b> · shared context loaded<br>agents: claude <i>✓</i> · gpt <i>✓</i> · gemini <i>✓</i><br>CONTEXT read · BITACORA synced<br>estado.sh <i>all systems green</i></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span><span class="badge oss">FRAMEWORK</span></div>
       <h3>Multiverso — multi-AI ops protocol</h3>
       <p>My own framework for operating multiple AI agents against one production environment: persistent shared context, per-project logs, live status tooling. Any agent — Claude, GPT, Gemini — resumes work with zero context loss.</p>
@@ -219,6 +233,7 @@ footer span b{color:var(--tx);font-weight:600}
       <div class="links"><a href="https://github.com/jorge22tc" target="_blank" rel="noopener">About</a></div>
     </div>
     <div class="card rev">
+      <div class="shot"><img src="https://nadiweb.tech/pa/paws.jpg" alt="thepawsadvisors.com live homepage" loading="lazy"></div>
       <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="badge live">LIVE</span></div>
       <h3>ThePawsAdvisors — affiliate engine</h3>
       <p>Amazon affiliate content site with scheduled generation, honest-data guardrails (no invented ratings) and hub-based SEO architecture for the pet niche.</p>
@@ -233,7 +248,7 @@ footer span b{color:var(--tx);font-weight:600}
   <h2 class="rev">Technical arsenal</h2>
   <div class="skills" style="margin-top:40px">
     <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.3A7 7 0 0 1 12 2z"/><path d="M9 21h6"/></svg>AI & Automation</h3>
-      <div class="tags"><span class="tag">LLM APIs (Anthropic · Gemini)</span><span class="tag">Prompt engineering</span><span class="tag">Agentic workflows</span><span class="tag">n8n</span><span class="tag">Ollama</span><span class="tag">RAG patterns</span></div></div>
+      <div class="tags"><span class="tag">LLM APIs (Anthropic · Gemini)</span><span class="tag">Local models (Ollama · Gemma)</span><span class="tag">Prompt engineering</span><span class="tag">Agentic workflows</span><span class="tag">n8n</span><span class="tag">RAG patterns</span><span class="tag">Fine-tuning basics</span></div></div>
     <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>Data & Backend</h3>
       <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">ETL</span><span class="tag">REST APIs</span></div></div>
     <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Frontend</h3>
@@ -248,9 +263,9 @@ footer span b{color:var(--tx);font-weight:600}
   <h2>Let's build something that stays up</h2>
   <p class="lead">Open to Software Engineer, AI/Automation and Data roles — remote or Panama. I answer fast.</p>
   <div class="btns" style="justify-content:center">
-    <a class="btn pri" href="mailto:jorgejairmartes@gmail.com"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>jorgejairmartes@gmail.com</a>
+    <a class="btn pri" href="mailto:jorge22tc@gmail.com"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>jorge22tc@gmail.com</a>
     <a class="btn gho" href="https://www.linkedin.com/in/jorgemartes" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn gho" href="cv/Jorge_Martes_CV.pdf" download>Download CV</a>
+    <a class="btn gho" href="https://nadiweb.tech/pa/Jorge_Martes_CV.pdf" download>Download CV</a>
   </div>
 </div></section>
 
