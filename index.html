@@ -1,295 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jorge Martes — Software Engineer · AI & Automation</title>
-<meta name="description" content="Jorge Martes — Software Engineer specializing in AI-driven automation, enterprise data systems and full-stack development. Panama.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<meta name="description" content="Software Engineer specializing in AI-driven automation, enterprise data systems (Oracle, SQL Server) and production infrastructure. Panama City, Panama.">
+<meta name="keywords" content="Software Engineer, AI Automation, Python, FastAPI, Oracle, SQL Server, PostgreSQL, AWS, Docker, LLM, Machine Learning, DevOps, Panama">
+<meta property="og:title" content="Jorge Martes — Software Engineer · AI & Automation">
+<meta property="og:description" content="I build AI-driven automation over enterprise data systems — and run 6 products in production on my own infrastructure.">
+<meta property="og:url" content="https://jorge22tc.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0a0f1c; --bg2:#0f1729; --card:#141d33; --border:#1e2a45;
-  --text:#e2e8f0; --muted:#94a3b8; --accent:#3b9eff; --accent2:#7c5cff;
-  --grad:linear-gradient(135deg,#3b9eff,#7c5cff);
-}
+:root{--bg:#0A0E1A;--bg2:#0F1526;--card:#131B30;--line:rgba(148,163,184,.12);--tx:#E6EAF2;--mut:#8B94A7;--ac:#4F8CFF;--ac2:#22D3EE;--ok:#34D399;--mono:'JetBrains Mono',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6}
-.mono{font-family:'JetBrains Mono',monospace}
-.container{max-width:1000px;margin:0 auto;padding:0 24px}
-
-/* Nav */
-nav{position:fixed;top:0;width:100%;background:rgba(10,15,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100}
-nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
-.logo{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent);text-decoration:none;font-size:1.05rem}
-nav ul{display:flex;gap:28px;list-style:none}
-nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:color .2s}
-nav ul a:hover{color:var(--accent)}
-@media(max-width:640px){nav ul{gap:16px}nav ul li:nth-child(n+4){display:none}}
-
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;
-  background:radial-gradient(circle,rgba(59,158,255,.12),transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-250px;left:-150px;width:500px;height:500px;
-  background:radial-gradient(circle,rgba(124,92,255,.10),transparent 65%);pointer-events:none}
-.hero .container{position:relative;z-index:1}
-.hero .kicker{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.95rem;margin-bottom:14px}
-.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.08}
-.hero h2{font-size:clamp(1.3rem,4vw,2.1rem);font-weight:600;margin-top:8px;
-  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:560px;color:var(--muted);margin-top:22px;font-size:1.05rem}
-.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;
-  text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.ic{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,14,26,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+.logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#071022;font-weight:700}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--mut)}
+nav ul a:hover{color:var(--tx)}
+.cta{padding:9px 18px;border-radius:10px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#071022;font-weight:600;font-size:14px}
+@media(max-width:820px){nav ul{display:none}}
+.hero{min-height:92vh;display:flex;align-items:center;padding-top:64px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 75% 18%,rgba(79,140,255,.13),transparent),radial-gradient(500px 300px at 15% 85%,rgba(34,211,238,.07),transparent);pointer-events:none}
+.kicker{font-family:var(--mono);font-size:14px;color:var(--ac2);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.kicker::before{content:"";width:34px;height:1px;background:var(--ac2)}
+h1{font-size:clamp(40px,7vw,74px);font-weight:700;letter-spacing:-.03em;line-height:1.03}
+.type-line{font-size:clamp(22px,3.6vw,38px);font-weight:600;letter-spacing:-.02em;color:var(--mut);margin-top:14px;min-height:1.4em}
+#typed{color:var(--tx)}
+.caret{display:inline-block;width:3px;height:1em;background:var(--ac2);vertical-align:-2px;animation:blink 1s step-end infinite;margin-left:2px}
+@keyframes blink{50%{opacity:0}}
+.hero p.sub{max-width:640px;color:var(--mut);font-size:17px;margin-top:26px}
+.hero p.sub strong{color:var(--tx);font-weight:600}
+.hero .btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;transition:transform .18s,box-shadow .18s}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 24px rgba(59,158,255,.28)}
-.btn-ghost{border:1px solid var(--border);color:var(--text);background:var(--card)}
-.btn-ghost:hover{border-color:var(--accent)}
-
-/* Sections */
-section{padding:88px 0}
-.sec-title{font-size:1.7rem;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:12px}
-.sec-title::before{content:'';width:34px;height:4px;border-radius:2px;background:var(--grad)}
-.sec-sub{color:var(--muted);margin-bottom:40px}
-
-/* About */
-.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
-.about-grid p{color:var(--muted);margin-bottom:14px}
-.about-grid strong{color:var(--text)}
-.facts{display:flex;flex-direction:column;gap:14px}
-.fact{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
-.fact .num{font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.fact .lbl{color:var(--muted);font-size:.86rem}
-
-/* Timeline */
-.timeline{position:relative;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
-.titem{position:relative;padding-bottom:36px}
-.titem:last-child{padding-bottom:0}
-.titem::before{content:'';position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;
-  background:var(--bg);border:3px solid var(--accent)}
-.titem .role{font-weight:700;font-size:1.08rem}
-.titem .org{color:var(--accent);font-weight:600}
-.titem .when{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted);margin:4px 0 10px}
-.titem ul{list-style:none;color:var(--muted);font-size:.94rem}
-.titem li{padding-left:18px;position:relative;margin-bottom:6px}
-.titem li::before{content:'›';position:absolute;left:0;color:var(--accent)}
-
-/* Skills */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:border-color .2s,transform .2s}
-.skill-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.skill-card h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.skill-card h3 .ico{font-size:1.2rem}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:'JetBrains Mono',monospace;font-size:.76rem;padding:5px 11px;border-radius:999px;
-  background:rgba(59,158,255,.1);color:var(--accent);border:1px solid rgba(59,158,255,.25)}
-
-/* Projects */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.proj{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;
-  display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
-.proj:hover{border-color:var(--accent2);transform:translateY(-3px)}
-.proj h3{font-size:1.05rem}
-.proj p{color:var(--muted);font-size:.92rem;flex:1}
-.proj .soon{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent2);
-  border:1px dashed rgba(124,92,255,.4);border-radius:8px;padding:3px 10px;width:fit-content}
-
-/* Contact */
-.contact-box{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:48px;text-align:center}
-.contact-box h2{font-size:1.6rem;font-weight:800}
-.contact-box p{color:var(--muted);max-width:480px;margin:14px auto 28px}
-
-footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem}
-footer a{color:var(--accent);text-decoration:none}
+.btn.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#071022;box-shadow:0 8px 28px rgba(79,140,255,.25)}
+.btn.gho{border:1px solid var(--line);color:var(--tx);background:var(--bg2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:56px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.stat b{display:block;font-size:30px;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:12.5px;color:var(--mut)}
+section{padding:96px 0}
+.sec-k{font-family:var(--mono);font-size:13px;color:var(--ac2);margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+.lead{color:var(--mut);max-width:640px;margin-bottom:44px}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.rev.on{opacity:1;transform:none}
+.term{background:#0B1120;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);font-family:var(--mono);font-size:13.5px}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0F172A;border-bottom:1px solid var(--line)}
+.dot{width:11px;height:11px;border-radius:50%}
+.term-bar em{font-style:normal;color:var(--mut);font-size:12px;margin-left:10px}
+.term-body{padding:18px 20px;min-height:300px;color:#B9C4D8;white-space:pre-wrap}
+.tp{color:var(--ac2)} .tg{color:var(--ok)} .tm{color:var(--mut)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.xp{border-left:1px solid var(--line);padding-left:32px;position:relative}
+.xp-item{position:relative;padding-bottom:44px}
+.xp-item::before{content:"";position:absolute;left:-37px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 4px rgba(79,140,255,.15)}
+.xp-item .when{font-family:var(--mono);font-size:12.5px;color:var(--ac2)}
+.xp-item h3{font-size:19px;margin:6px 0 2px}
+.xp-item .org{color:var(--mut);font-size:14px;margin-bottom:10px}
+.xp-item ul{list-style:none;color:var(--mut);font-size:14.5px}
+.xp-item li{padding-left:18px;position:relative;margin-bottom:7px}
+.xp-item li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border:1.5px solid var(--ac2);border-radius:2px;transform:rotate(45deg)}
+.xp-item li strong{color:var(--tx)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-5px);border-color:rgba(79,140,255,.45)}
+.card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.card .fold{width:40px;height:40px;border-radius:10px;background:rgba(79,140,255,.12);display:grid;place-items:center;color:var(--ac)}
+.card h3{font-size:17.5px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:14px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.tag{font-family:var(--mono);font-size:11px;color:var(--ac2);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.18);padding:3px 9px;border-radius:99px}
+.card .links{display:flex;gap:16px;margin-top:16px;font-size:13.5px;font-weight:600;color:var(--ac)}
+.card .links a:hover{color:var(--ac2)}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.06em;padding:4px 10px;border-radius:99px}
+.badge.live{color:var(--ok);background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25)}
+.badge.oss{color:var(--ac2);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.skill h3{font-size:15px;display:flex;align-items:center;gap:10px;margin-bottom:14px;color:var(--tx)}
+.skill h3 .ic{color:var(--ac)}
+.skill .tags{margin-top:0}
+.skill .tag{color:#AEB9CE;background:rgba(148,163,184,.07);border-color:var(--line)}
+.contact{text-align:center;padding-bottom:120px}
+.contact .lead{margin:0 auto 40px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer span b{color:var(--tx);font-weight:600}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <a href="#" class="logo">jorge@martes:~$</a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+<nav><div class="wrap">
+  <a class="logo" href="#top"><span class="mark">JM</span>Jorge Martes</a>
+  <ul>
+    <li><a href="#about">About</a></li><li><a href="#infra">Infrastructure</a></li>
+    <li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+  <a class="cta" href="cv/Jorge_Martes_CV.pdf" download>Download CV</a>
+</div></nav>
 
-<header class="hero">
-  <div class="container">
-    <div class="kicker">Hi, my name is</div>
-    <h1>Jorge Martes.</h1>
-    <h2>I automate the enterprise with AI.</h2>
-    <p>Software Engineer specializing in <strong style="color:var(--text)">AI-driven automation</strong> and
-       enterprise data systems. I build intelligent workflows over Oracle &amp; SQL Server at telecom scale —
-       currently at Liberty Networks, Panama.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="Jorge_Martes_CV.pdf" download>⬇ Download CV</a>
-      <a class="btn btn-ghost" href="https://github.com/jorge22tc" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/jorgemartes" target="_blank" rel="noopener">LinkedIn</a>
+<header class="hero" id="top"><div class="wrap">
+  <p class="kicker">Panama City, Panama · Open to remote</p>
+  <h1>Jorge Martes</h1>
+  <p class="type-line">I build <span id="typed"></span><span class="caret"></span></p>
+  <p class="sub">Software Engineer specializing in <strong>AI-driven automation</strong> and <strong>enterprise data systems</strong>. I design intelligent workflows over Oracle and SQL Server at telecom scale — currently at <strong>Liberty Networks</strong> — and I operate <strong>six products in production</strong> on infrastructure I run myself.</p>
+  <div class="btns">
+    <a class="btn pri" href="#projects"><svg class="ic" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>View my work</a>
+    <a class="btn gho" href="https://github.com/jorge22tc" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg>GitHub</a>
+    <a class="btn gho" href="https://www.linkedin.com/in/jorgemartes" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v2a6 6 0 0 1 2-2z"/><rect x="2" y="9" width="4" height="12" rx="1"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b data-count="6">0</b><span>Products in production</span></div>
+    <div class="stat"><b data-count="60" data-suffix="%">0</b><span>Manual processing cut with AI (Liberty)</span></div>
+    <div class="stat"><b data-count="750" data-suffix="%">0</b><span>SEO traffic recovery (8→68 impr/day)</span></div>
+    <div class="stat"><b data-count="98">0</b><span>PageSpeed score, production sites</span></div>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap grid2">
+  <div class="rev">
+    <p class="sec-k">01 · about</p>
+    <h2>Engineer by trade, operator by conviction</h2>
+    <p class="lead" style="margin-bottom:18px">Most engineers ship code. I ship code <em>and keep it alive</em>: my own VPS runs nginx multi-site, Docker (n8n + PostgreSQL), automated content pipelines, scheduled jobs, hardened SSH, fail2ban and off-site backups — serving real users every day.</p>
+    <p style="color:var(--mut);font-size:15px">That combination — <strong style="color:var(--tx)">AI engineering + enterprise SQL + production operations</strong> — is what I bring to a team: I don't hand off problems at the deploy line. B.Sc. in Information Technologies (UTP), studying Cybersecurity Engineering, English C1 (Ontario Tech / EF SET 74).</p>
+  </div>
+  <div class="rev term" id="infra">
+    <div class="term-bar"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><em>ssh production — live status</em></div>
+    <div class="term-body" id="termout"></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <p class="sec-k rev">02 · experience</p>
+  <h2 class="rev">Where I've made an impact</h2>
+  <div class="xp" style="margin-top:40px">
+    <div class="xp-item rev">
+      <span class="when">2024 — PRESENT</span>
+      <h3>Software Engineer</h3>
+      <p class="org">Liberty Networks · Panama City (telecom, enterprise)</p>
+      <ul>
+        <li>Built <strong>AI-based ticket classification</strong> that cut manual processing time by <strong>60%</strong> across support operations.</li>
+        <li>Develop and automate workflows over <strong>Oracle & SQL Server</strong> at telecom scale (ETL, reporting, integrations).</li>
+        <li>Python, SQL, AWS, REST integrations for enterprise systems.</li>
+      </ul>
+    </div>
+    <div class="xp-item rev">
+      <span class="when">2023 — PRESENT</span>
+      <h3>Founder & Solo Engineer</h3>
+      <p class="org">Self-managed production platform (VPS) — 6 live products</p>
+      <ul>
+        <li><strong>aizyla.com</strong> — AI news & tools site with automated publishing pipeline (RSS → CTR scoring → SEO/schema → verified deploy). Diagnosed and <strong>recovered a Google Helpful Content penalty</strong>: 8→68 impressions/day, PageSpeed 98.</li>
+        <li><strong>nadiweb.tech</strong> — 20-tool online utility ecosystem (Astro + React islands, Gemini-powered CV assistant).</li>
+        <li><strong>tdsolutionspa.com</strong> — agency site + n8n/PostgreSQL coupon & invoicing backend (Docker) with real external clients.</li>
+        <li>Designed a <strong>multi-AI operations protocol</strong> ("Multiverso"): persistent shared context (CONTEXT/BITACORA/estado.sh) so any AI agent resumes work with zero loss — agentic engineering in production since 2025.</li>
+      </ul>
+    </div>
+    <div class="xp-item rev" style="padding-bottom:0">
+      <span class="when">2021 — 2024</span>
+      <h3>General Manager → Technology Lead</h3>
+      <p class="org">Retail operations, Panama</p>
+      <ul>
+        <li>Led operations and drove digitalization: inventory systems, e-commerce, payment integrations.</li>
+        <li>Bridge profile: <strong>business ownership mindset</strong> applied to engineering decisions.</li>
+      </ul>
     </div>
   </div>
-</header>
+</div></section>
 
-<section id="about">
-  <div class="container">
-    <h2 class="sec-title">About me</h2>
-    <p class="sec-sub">Engineer by training, automator by instinct.</p>
-    <div class="about-grid">
-      <div>
-        <p>I'm a software engineer from Panama 🇵🇦 with an international path: I studied
-           <strong>Software Engineering at Ontario Tech University (Canada)</strong>, worked alongside
-           robotic production systems at <strong>General Motors</strong>, and completed a Python, SQL &amp;
-           Cloud diploma at <strong>IMMUNE Technology Institute (Madrid)</strong>.</p>
-        <p>Today I work as an <strong>AI Software Developer at Liberty Networks</strong>, where I architect
-           billing and workflow automations across enterprise infrastructure and lead AI initiatives that
-           classify tickets and manage customer workflows automatically.</p>
-        <p>I'm also pursuing a <strong>Cybersecurity Engineering degree</strong> — because automation
-           without security is just a faster way to break things.</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><div class="num">60%+</div><div class="lbl">manual work eliminated through AI automation</div></div>
-        <div class="fact"><div class="num">3</div><div class="lbl">countries shaped my training — Canada, Spain, Panama</div></div>
-        <div class="fact"><div class="num">2</div><div class="lbl">languages — English &amp; Spanish, full professional</div></div>
-      </div>
+<section id="projects"><div class="wrap">
+  <p class="sec-k rev">03 · projects</p>
+  <h2 class="rev">Selected work</h2>
+  <p class="lead rev">Real systems with real users — not tutorial repos.</p>
+  <div class="cards">
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.3A7 7 0 0 1 12 2z"/><path d="M9 21h6"/></svg></span><span class="badge oss">OPEN SOURCE</span></div>
+      <h3>TriageAI — intelligent ticket triage</h3>
+      <p>FastAPI service that classifies support tickets (urgency, category, sentiment) with a two-tier engine: LLM (Anthropic/Gemini) with deterministic fallback — the service never fails because a provider is down. 15 tests, CI matrix, Docker.</p>
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">CI/CD</span></div>
+      <div class="links"><a href="https://github.com/jorge22tc/triage-ai" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/><path d="M12 16v4"/></svg></span><span class="badge live">LIVE</span></div>
+      <h3>AIZyla — automated AI publication</h3>
+      <p>News & tools site run by an automated pipeline: RSS ingestion, CTR-scored selection, SEO/schema generation, verified deploys. Survived and recovered a Google core penalty with a documented E-E-A-T redesign (+750% impressions).</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">SEO</span><span class="tag">Automation</span><span class="tag">Ollama</span></div>
+      <div class="links"><a href="https://aizyla.com" target="_blank" rel="noopener">aizyla.com</a></div>
+    </div>
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span class="badge live">LIVE</span></div>
+      <h3>NadiWeb — 20-tool ecosystem</h3>
+      <p>Online utilities platform (image, audio, video, documents, QR, CV builder with AI assistant). Astro static core with React islands, Web Audio API waveform editing, zero-dependency client-side processing.</p>
+      <div class="tags"><span class="tag">Astro</span><span class="tag">React</span><span class="tag">Gemini API</span><span class="tag">Tailwind</span></div>
+      <div class="links"><a href="https://nadiweb.tech" target="_blank" rel="noopener">nadiweb.tech</a></div>
+    </div>
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span><span class="badge live">LIVE</span></div>
+      <h3>TD Solutions — agency & backend</h3>
+      <p>Digital agency serving external clients: static frontend plus n8n workflow backend (Docker + PostgreSQL) powering coupons, invoicing and admin panels. PagueloFácil payment integration for the Panama market.</p>
+      <div class="tags"><span class="tag">n8n</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">nginx</span></div>
+      <div class="links"><a href="https://tdsolutionspa.com" target="_blank" rel="noopener">tdsolutionspa.com</a></div>
+    </div>
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span><span class="badge oss">FRAMEWORK</span></div>
+      <h3>Multiverso — multi-AI ops protocol</h3>
+      <p>My own framework for operating multiple AI agents against one production environment: persistent shared context, per-project logs, live status tooling. Any agent — Claude, GPT, Gemini — resumes work with zero context loss.</p>
+      <div class="tags"><span class="tag">Agentic AI</span><span class="tag">Claude Code</span><span class="tag">Linux</span><span class="tag">Ops</span></div>
+      <div class="links"><a href="https://github.com/jorge22tc" target="_blank" rel="noopener">About</a></div>
+    </div>
+    <div class="card rev">
+      <div class="top"><span class="fold"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="badge live">LIVE</span></div>
+      <h3>ThePawsAdvisors — affiliate engine</h3>
+      <p>Amazon affiliate content site with scheduled generation, honest-data guardrails (no invented ratings) and hub-based SEO architecture for the pet niche.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Affiliate SEO</span><span class="tag">Cron</span></div>
+      <div class="links"><a href="https://thepawsadvisors.com" target="_blank" rel="noopener">thepawsadvisors.com</a></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="experience" style="background:var(--bg2)">
-  <div class="container">
-    <h2 class="sec-title">Experience</h2>
-    <p class="sec-sub">Where I've built things that matter.</p>
-    <div class="timeline">
-      <div class="titem">
-        <div class="role">AI Software Developer <span class="org">@ Liberty Networks</span></div>
-        <div class="when">Feb 2025 — Present · Panama City, Panama</div>
-        <ul>
-          <li>Architect billing &amp; SOHO system automations across enterprise infrastructure.</li>
-          <li>Cross-server SQL against Oracle and SQL Server at enterprise scale.</li>
-          <li>Lead AI ticket-classification &amp; workflow automation — 60%+ less manual intervention.</li>
-        </ul>
-      </div>
-      <div class="titem">
-        <div class="role">Lead Developer <span class="org">@ TD Tech Solutions</span></div>
-        <div class="when">Jan 2024 — Feb 2025 · Panama</div>
-        <ul>
-          <li>End-to-end digitalization solutions: requirements → production.</li>
-          <li>Web platforms with backend APIs, relational DBs and AI-driven workflows.</li>
-          <li>BI dashboards &amp; marketing automation for hospitality and logistics clients.</li>
-        </ul>
-      </div>
-      <div class="titem">
-        <div class="role">Automotive Systems Technician <span class="org">@ General Motors</span></div>
-        <div class="when">Nov 2020 — Mar 2024 · Ontario, Canada</div>
-        <ul>
-          <li>Automated production lines, robotic systems and real-time quality control.</li>
-        </ul>
-      </div>
-    </div>
+<section id="skills"><div class="wrap">
+  <p class="sec-k rev">04 · skills</p>
+  <h2 class="rev">Technical arsenal</h2>
+  <div class="skills" style="margin-top:40px">
+    <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.3A7 7 0 0 1 12 2z"/><path d="M9 21h6"/></svg>AI & Automation</h3>
+      <div class="tags"><span class="tag">LLM APIs (Anthropic · Gemini)</span><span class="tag">Prompt engineering</span><span class="tag">Agentic workflows</span><span class="tag">n8n</span><span class="tag">Ollama</span><span class="tag">RAG patterns</span></div></div>
+    <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>Data & Backend</h3>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">ETL</span><span class="tag">REST APIs</span></div></div>
+    <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Frontend</h3>
+      <div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Astro</span><span class="tag">Tailwind CSS</span><span class="tag">Web APIs</span></div></div>
+    <div class="skill rev"><h3><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Infra & Security</h3>
+      <div class="tags"><span class="tag">Linux (Ubuntu)</span><span class="tag">Docker</span><span class="tag">nginx</span><span class="tag">AWS</span><span class="tag">CI/CD (Actions)</span><span class="tag">fail2ban · SSH hardening</span><span class="tag">Cybersecurity (studying)</span></div></div>
   </div>
-</section>
+</div></section>
 
-<section id="skills">
-  <div class="container">
-    <h2 class="sec-title">Skills</h2>
-    <p class="sec-sub">The tools I reach for.</p>
-    <div class="skills-grid">
-      <div class="skill-card"><h3><span class="ico">💻</span>Languages</h3>
-        <div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Java</span><span class="tag">SQL</span></div></div>
-      <div class="skill-card"><h3><span class="ico">🤖</span>AI &amp; Data</h3>
-        <div class="tags"><span class="tag">Machine Learning</span><span class="tag">LLM automation</span><span class="tag">Data Science</span><span class="tag">BI dashboards</span></div></div>
-      <div class="skill-card"><h3><span class="ico">🗄️</span>Databases</h3>
-        <div class="tags"><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">Cross-server queries</span><span class="tag">Performance tuning</span></div></div>
-      <div class="skill-card"><h3><span class="ico">☁️</span>Cloud &amp; Security</h3>
-        <div class="tags"><span class="tag">AWS</span><span class="tag">Git / GitHub</span><span class="tag">Cybersecurity</span><span class="tag">Secure data handling</span></div></div>
-    </div>
+<section class="contact" id="contact"><div class="wrap rev">
+  <p class="sec-k">05 · contact</p>
+  <h2>Let's build something that stays up</h2>
+  <p class="lead">Open to Software Engineer, AI/Automation and Data roles — remote or Panama. I answer fast.</p>
+  <div class="btns" style="justify-content:center">
+    <a class="btn pri" href="mailto:jorgejairmartes@gmail.com"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>jorgejairmartes@gmail.com</a>
+    <a class="btn gho" href="https://www.linkedin.com/in/jorgemartes" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn gho" href="cv/Jorge_Martes_CV.pdf" download>Download CV</a>
   </div>
-</section>
+</div></section>
 
-<section id="projects" style="background:var(--bg2)">
-  <div class="container">
-    <h2 class="sec-title">Projects</h2>
-    <p class="sec-sub">Real products, live in production — all designed, built and operated by me on my own VPS infrastructure.</p>
-    <div class="projects-grid">
-      <div class="proj">
-        <h3>🎯 TriageAI</h3>
-        <p>Intelligent support-ticket triage with a two-tier engine: LLM classification (Anthropic/Gemini)
-           with a <strong style="color:var(--text)">deterministic fallback</strong> — production AI that never becomes a single point of failure.
-           REST API, live dashboard, 15 tests, CI, Docker.</p>
-        <div class="tags"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">LLM</span><span class="tag">Docker · CI</span></div>
-        <a class="soon" href="https://github.com/jorge22tc/triage-ai" target="_blank" rel="noopener">view source →</a>
-      </div>
-      <div class="proj">
-        <h3>🧠 AIZyla</h3>
-        <p>AI news, guides &amp; tools platform with a Q&amp;A community. Powered by my own autopublish engine:
-           RSS ingestion → CTR-scored headlines → SEO/schema → verified deploys. Survived and <strong style="color:var(--text)">recovered from a
-           Google Helpful Content demotion</strong> with a data-driven E-E-A-T strategy (PageSpeed 98, SEO 100).</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Flask · Node</span><span class="tag">Gemini API</span><span class="tag">GSC API</span></div>
-        <a class="soon" href="https://aizyla.com" target="_blank" rel="noopener">visit aizyla.com →</a>
-      </div>
-      <div class="proj">
-        <h3>🛠️ Nadiweb</h3>
-        <p>Ecosystem of free online tools with AI features. Built with Astro + React islands and a FastAPI
-           backend, with a custom SVG icon system and performance-first architecture.</p>
-        <div class="tags"><span class="tag">Astro</span><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Gemini</span></div>
-        <a class="soon" href="https://nadiweb.tech" target="_blank" rel="noopener">visit nadiweb.tech →</a>
-      </div>
-      <div class="proj">
-        <h3>🐾 The Paws Advisors</h3>
-        <p>Amazon Associates niche site for pet products. Python-generated pages with a verified image
-           pipeline and strict compliance: real data only, proper disclosures, no invented reviews.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">SEO</span><span class="tag">Amazon Associates</span></div>
-        <a class="soon" href="https://thepawsadvisors.com" target="_blank" rel="noopener">visit thepawsadvisors.com →</a>
-      </div>
-      <div class="proj">
-        <h3>🏢 TD Solutions</h3>
-        <p>My digital agency for Panamanian SMBs: websites, software and automation. Runs n8n-powered
-           invoice/coupon backends and <strong style="color:var(--text)">BookingYouNow</strong>, a reservations platform (Node + PostgreSQL).</p>
-        <div class="tags"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">n8n</span><span class="tag">Docker</span></div>
-        <a class="soon" href="https://tdsolutionspa.com" target="_blank" rel="noopener">visit tdsolutionspa.com →</a>
-      </div>
-      <div class="proj">
-        <h3>🌌 Multiverso Protocol</h3>
-        <p>My own multi-AI operations framework: a VPS as single source of truth where any AI session
-           (Claude, GPT, Gemini) resumes work through per-project context files, logs and live state scripts.
-           Agentic ops — before it was cool.</p>
-        <div class="tags"><span class="tag">DevOps</span><span class="tag">AI agents</span><span class="tag">Tailscale</span><span class="tag">Linux</span></div>
-        <span class="soon">public repo coming soon</span>
-      </div>
-      <div class="proj">
-        <h3>📱 Vidle</h3>
-        <p>Turning my VPS into a mobile IDE: coding with AI from my phone through a secure Tailscale
-           mesh, persistent tmux sessions and a web terminal.</p>
-        <div class="tags"><span class="tag">Tailscale</span><span class="tag">tmux</span><span class="tag">Linux</span></div>
-        <span class="soon">in development</span>
-      </div>
-    </div>
-  </div>
-</section>
+<footer><div class="wrap">
+  <span>© 2026 <b>Jorge Martes</b> — designed & built by me, served from my own infrastructure.</span>
+  <span style="font-family:var(--mono);font-size:12px">Panama City · UTC-5</span>
+</div></footer>
 
-<section id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <h2>Let's build something.</h2>
-      <p>I'm open to remote and hybrid opportunities where AI, data and automation meet real business problems.</p>
-      <a class="btn btn-primary" href="mailto:jorge22tc@gmail.com">✉ jorge22tc@gmail.com</a>
-    </div>
-  </div>
-</section>
+<script>
+const roles=["AI-driven automation.","enterprise data pipelines.","systems that survive production.","intelligent workflows."];
+let ri=0,ci=0,del=false;const T=document.getElementById('typed');
+(function type(){const w=roles[ri];T.textContent=w.slice(0,ci);
+ if(!del&&ci<w.length){ci++;setTimeout(type,55);}
+ else if(!del){del=true;setTimeout(type,1900);}
+ else if(ci>0){ci--;setTimeout(type,28);}
+ else{del=false;ri=(ri+1)%roles.length;setTimeout(type,350);}})();
 
-<footer>
-  <div class="container">
-    Built by Jorge Martes · <a href="https://github.com/jorge22tc" target="_blank" rel="noopener">github.com/jorge22tc</a>
-  </div>
-</footer>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
 
+let counted=false;
+const cio=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!counted){counted=true;
+ document.querySelectorAll('[data-count]').forEach(el=>{const end=+el.dataset.count,suf=el.dataset.suffix||'';let cur=0;const step=Math.max(1,Math.round(end/50));
+  const t=setInterval(()=>{cur+=step;if(cur>=end){cur=end;clearInterval(t);}el.textContent=cur+suf;},28);});}},{threshold:.3});
+cio.observe(document.querySelector('.stats'));
+
+const lines=[
+ ["tp","jorge@panama:~$ ",0],["","ssh prod-vps",60],
+ ["tm","\nConnected. Ubuntu 24.04 LTS · uptime 247 days\n",30],
+ ["tp","jorge@prod:~$ ",0],["","./estado.sh",60],
+ ["","\n\nPRODUCTION STATUS ─────────────────────\n",5],
+ ["tg"," ● aizyla.com          200 OK   autopublish: on\n",12],
+ ["tg"," ● nadiweb.tech        200 OK   20 tools live\n",12],
+ ["tg"," ● thepawsadvisors     200 OK   cron: 2 posts/day\n",12],
+ ["tg"," ● tdsolutionspa.com   200 OK   n8n + postgres up\n",12],
+ ["tg"," ● docker              3 containers healthy\n",12],
+ ["tg"," ● backups             daily 02:00 · verified\n",12],
+ ["tm","────────────────────────────────────────\n",5],
+ ["","6 products · 1 engineer · zero downtime week\n",25],
+ ["tp","jorge@prod:~$ ",0],["tm","█",0]];
+const TB=document.getElementById('termout');let started=false;
+const tio=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!started){started=true;play(0,0);}},{threshold:.3});
+tio.observe(TB);
+function play(li,chi){if(li>=lines.length)return;
+ const[cls,txt,spd]=lines[li];
+ if(chi<txt.length){const s=document.createElement('span');if(cls)s.className=cls;s.textContent=txt[chi];TB.appendChild(s);
+  setTimeout(()=>play(li,chi+1),spd||8);}
+ else play(li+1,0);}
+</script>
 </body>
 </html>
